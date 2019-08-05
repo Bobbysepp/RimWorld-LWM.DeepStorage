@@ -133,9 +133,25 @@ This template demonstrates that whitespace is obeyed in the description.\n\nSo a
   </comps>
 </ThingDef>
   -->
-
+  <!--This entire def can be merged into LWM_DeepStorage. Afterwards its parent will be BuildingBase. 
+  It depends really on whether or not you want any future things without any of these tags.
+  Might make it easier for setting stuff if we keep it this way, I don't know. -Bobby -->
+  <ThingDef Name="LWM_DeepStorageBase" ParentName="BuildingBase" Abstract="True">
+	<!--Basically Furniture Base-->
+    <designationCategory>LWM_DeepStorageCat</designationCategory>	<!--Added in folder "DesignationDefs"-->
+    <minifiedDef>MinifiedThing</minifiedDef><!--Also in LWM_Deepstorage, could prolly remove one or the other-->
+    <thingCategories>
+      <li>BuildingsFurniture</li><!--This seems to work just fine, unless you want your own category in stockpiles.-->
+    </thingCategories>
+	<!--Basically Furniture With Quality Base-->
+	<comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+  </ThingDef>
   <!-- Mostly copied from shelf -->
-  <ThingDef Name="LWM_DeepStorage" ParentName="FurnitureWithQualityBase" Abstract="true"><!--  Class="LWM.DeepStorage.DeepStorageDef">-->
+  <ThingDef Name="LWM_DeepStorage" ParentName="LWM_DeepStorageBase" Abstract="true"><!--  Class="LWM.DeepStorage.DeepStorageDef">-->
     <defName>LWM_DeepStorage</defName><!-- this defname doesn't actually exist in-game, does it? -->
     <thingClass>Building_Storage</thingClass>
 

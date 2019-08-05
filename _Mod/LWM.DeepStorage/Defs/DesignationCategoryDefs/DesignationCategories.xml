@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<designationCategoryDef>
+	<defName>LWM_DeepStorageCat</defName>
+	<label>Deep Storage</label><!--This is what it shows in the architect tab. Maybe add a key for localization?-->
+	<description>Various storage buildings</description><!--Couldn't come up with anything better for here.-->
+	<order>10</order><!--Bigger seems to be higher on the list. Ref Furniture catigory at 500.-->
+	<specialDesignatorClasses>
+		<li>Designator_Cancel</li>
+		<li>Designator_Deconstruct</li>
+		<!--I noticed this in ASAR and figured if you are using storage buildings, 
+		you might as well be able to edit stockpiles from one place-->
+		<li>Designator_ZoneAddStockpile_Resources</li>
+		<li>Designator_ZoneAddStockpile_Dumping</li>
+		<li>Designator_ZoneDelete</li>
+	</specialDesignatorClasses>
+</designationCategoryDef>
+  
+</Defs>
